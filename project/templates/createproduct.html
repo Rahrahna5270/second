@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table style="padding: 2em;">
+        <tr  >
+            <th>Image</th>
+            <th>Name</th>
+            <th>description</th>
+            <th>price</th>
+        </tr>
+       
+        {% for i in product %}
+        <tr>
+            <td><img src="{{ i.image.url }}" alt="{{ i.name }}" style="width:90px;height:auto;"></td>
+            <td>{{i.name}}</td>
+            <td style="width: 300px;">{{i.description}}</td>
+            <td>{{i.rate}}</td>
+            <td><a href="{% url "delete" i.id %}"><button type="submit">delete</button></a></td>
+            <td><a href="{% url "edit" i.id %}"><button type="submit">edit</button></a></td>
+
+
+        </tr>
+        
+        {% endfor %}
+            
+       
+        
+    </table>
+    
+</body>
+</html>

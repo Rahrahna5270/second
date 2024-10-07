@@ -1,0 +1,45 @@
+.head{
+    display: flex;
+    padding-left: 20em;
+    border: 1px solid rgb(179, 175, 175);
+    height: 3.5em;
+    gap: 3.5em;
+    align-items: center;
+    text-align: center;
+       
+}
+.pro{
+    display: flex;
+    align-items: center;
+    /* flex-wrap: wrap; */
+    text-align: center;
+    padding-left: 10em;
+    gap: 4em;
+    
+    
+}
+.prodct{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center; 
+}
+.product-item{
+    flex: 1 1 calc(33.333% - 10px);
+    box-sizing: border-box; 
+    /* padding-inline: 6em; */
+    padding-bottom: 1em;
+}
+.sale{
+    padding-top: 4em;
+    padding-left: 9em;
+}
+.today{
+    border-left: 1rem solid rgb(198, 11, 11);
+    padding-left: 1em;
+    color: rgb(198, 11, 11) ;
+}
+.cat{
+    height: 200px;
+    border-radius: 25%;
+    border: 0.2em solid rgb(191, 89, 106);
+}

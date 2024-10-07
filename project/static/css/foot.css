@@ -1,0 +1,22 @@
+.foot{
+    display: flex;
+    gap: 8em;
+    background-color: black;
+    color: white;
+    padding-left: 12em;
+    padding-top: 2em;
+    padding-bottom: 4em;
+}
+
+.footlast{
+    background-color: rgb(44, 38, 38);
+    text-align: center;
+    color: rgb(144, 138, 138);
+    height: 2em;
+}
+@media screen and (max-width:425px){
+.foot{
+    display: block;
+    padding: 0px;
+}
+}

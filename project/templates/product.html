@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="product-item">
+        <img src="{{data.image.url}}" alt="" style="height:300px; ">
+        <p>{{data.name}}</p>
+        <p> Rs. {{data.rate}} /-</p>
+        <a href= "{% url "viewprods" i.id %} "><button type="button" class="btn btn-primary" style="background:rgb(191, 89, 106); border:0px;">View Product</button></a>
+    </div> 
+   
+</body>
+</html>

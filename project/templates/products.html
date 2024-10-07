@@ -1,0 +1,17 @@
+{% extends "common.html" %}
+{% block title %}Products{% endblock title %}
+{% block content %}
+{% load static %}
+
+<div class="sale">
+    <p class="today" >View All Products</p>
+    
+</div>
+
+<div class="prodct">
+    {% for i in product %}
+    {% include "product.html" with data=i %}
+    {% endfor %}
+
+</div>
+{% endblock content %}

@@ -1,0 +1,19 @@
+{% extends "common.html" %}
+{% block title %}category{% endblock title %}
+{% block content %}
+{% load static %}
+<div class="sale">
+    <p class="today" >Categories</p>
+    
+</div>
+<div class="pro">
+    {% for i in category %}
+    <a href="{% url "prodscat" i.id %}" style="text-decoration:none">
+ 
+    {% include "categories.html" with data=i %}</a>
+    {% endfor %}
+
+</div>
+
+
+{% endblock content %}

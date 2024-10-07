@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static "css/cart1.css" %}">
+</head>
+<body>
+    <header>{% include "header.html" %}</header>
+    <h3 class="shopbag">Your whishlist</h3>
+    {% if wishlist %}
+    
+    {% for i in  wishlist%}
+    <div style="display: flex; padding-left: 3em; padding-top: 2em; padding-right: 29em;">
+        <div>
+            <img src="{{i.product.image.url}}" style="height: 200px;" alt="">
+        </div>
+        
+        <div class="views">
+            <p>{{i.product.name}}</p>
+            <p>{{i.product.rate}}</p>
+            <p>{{i.product.description}}</p>
+        </div>
+
+    </div>
+    {% endfor %}
+    {% else %} 
+        <div class="cartempty">
+            <p >Your cart is empty !</p>  
+             
+        </div>
+    {% endif %}
+</body>
+</html>

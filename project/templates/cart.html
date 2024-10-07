@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static "css/cart1.css" %}">
+</head>
+<body>
+    <header>{% include "header.html" %}</header>
+   <!-- <div style="padding: 4em;">
+        <div class="view">
+            <h3>cart</h3>
+            <img src="{{cartproduct.image.url}}" style="height: 300px;" alt="">
+            <h2>{{cartproduct.name}}</h2>
+            <p> $ {{cartproduct.rate}}</p>
+        </div> -->
+    <h3 class="shopbag">Shopping Bag</h3>
+    
+                {% if messages %}
+                    {% for message in messages %}
+                        <p> {{message}}</p>
+                    {% endfor %}
+                {% endif %}
+
+    {% if productsincart %}     
+        {% for item in productsincart %}
+           <div style="display: flex;">
+                <div class="views">
+                    <img src="{{ item.product.image.url }}" style="height: 200px;" alt="">
+                    
+                
+                </div>
+                <div class="button" style="padding: 3em;">
+                    
+                    <h2>{{ item.product.name }}</h2>
+                    <p> $ {{ item.product.rate }} </p>
+                    <p>Qty: {{ item.quantity }}</p>
+                   
+                    
+                     <!-- <a href="remove"><button type="submit" style="background-color: rgb(116, 14, 82);" class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"  fill="currentColor" class="bi bi-handbag" viewBox="3 0 14 18"></svg>
+                        <path d="M8 1a2 2 0 0 1 2 2v2H6V3a2 2 0 0 1 2-2m3 4V3a3 3 0 1 0-6 0v2H3.36a1.5 1.5 0 0 0-1.483 1.277L.85 13.13A2.5 2.5 0 0 0 3.322 16h9.355a2.5 2.5 0 0 0 2.473-2.87l-1.028-6.853A1.5 1.5 0 0 0 12.64 5zm-1 1v1.5a.5.5 0 0 0 1 0V6h1.639a.5.5 0 0 1 .494.426l1.028 6.851A1.5 1.5 0 0 1 12.678 15H3.322a1.5 1.5 0 0 1-1.483-1.723l1.028-6.851A.5.5 0 0 1 3.36 6H5v1.5a.5.5 0 1 0 1 0V6z"/>
+                    </svg>  Remove </button></a> --> 
+
+                    <div style="display: flex; gap: 1em;">
+                        <form method="POST" action="{% url 'remove' item.id %}">
+                            {% csrf_token %}
+                            <button type="submit" style="background-color: rgb(116, 14, 82);" class="btn btn-primary" >Remove</button>
+                        </form>
+                    
+                        <div>
+                           <button type="button" style="background-color: rgb(225, 153, 19);color:white;" class="btn btn-warning"> place order</button>
+                        </div>
+    
+                    </div>
+                </div>
+           </div>
+           
+        {% endfor %} 
+    {% else %} 
+        <div class="cartempty">
+            <p >Your cart is empty !</p>  
+             
+        </div>
+
+           
+    {% endif %} 
+    {% if productsincart %}
+        <div class="box border border-warning p-5" >
+            
+            <h4>Price Details</h4>
+
+            <div  >
+                <p style=" font-size: 22px;"> Total : {{total}}</p>
+                
+            </div>
+            <a href="{% url "order"  %}">
+                <button type="submit" style="background-color: rgb(225, 153, 19);color:white;" class="btn btn-warning">Continue</button>
+            </a>
+           
+       
+        </div>
+    {% endif %}
+   </div>
+</body>
+</html>

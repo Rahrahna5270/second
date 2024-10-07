@@ -1,0 +1,42 @@
+.view{
+    padding-left: 10em;
+    padding-bottom: 2em;
+    display: flex;
+    gap: 6em;
+    padding-right: 9em;
+}
+.add{
+    display: flex;
+    gap: 2em;
+}
+.button{
+    display: flex;
+    /* gap: 2em; */
+}
+
+.popup-message{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: rgb(246, 246, 12);
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    z-index: 1000;
+    display: none;
+}
+
+.popup-show{
+    display: block;
+    animation: fadein 0.5s, fadeout 0.5s;
+}
+
+@keyframes fadein{
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadein{
+    from {opacity: 1;}
+    to {opacity: 0;}
+}

@@ -1,0 +1,22 @@
+{% extends "common.html" %}
+{% block title %}product by category{% endblock title %}
+{% block content %}
+{% load static %}
+
+<div class="sale">
+    <p class="today" >Products by category</p>
+       
+</div>
+{% comment %} <div class="pro">
+    {% for i in product %}
+    {% include "product.html" with data=i %}
+    {% endfor %}
+
+</div> {% endcomment %}
+<div class="pro">
+    {% for i in prod %}
+    {% include "product.html" with data=i %}
+    {% endfor %}
+
+</div>
+{% endblock content %}
